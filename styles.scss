@@ -1,0 +1,83 @@
+$primary-font: 'Kumbh Sans', sans-serif;
+
+$text-dark-blue: hsl(238, 29%, 16%);
+$text-soft-red: hsl(14, 88%, 65%);
+$text-very-dark-gray-blue: hsl(237, 12%, 33%);
+$text-dark-gray-blue:  hsl(240, 6%, 50%);
+
+$hr-light-gray-blue: hsl(240, 5%, 91%);
+
+$bg-soft-violet: hsl(273, 75%, 66%);
+$bg-soft-blue: hsl(240, 73%, 65%);
+
+body {
+    background-color: $bg-violet;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: $text-dark-blue;
+
+    a { 
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    .image {
+        width: 266px;
+        height: 196px;
+        margin: auto;
+
+        .image__left {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .accordion {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+
+        }
+
+        .accordion__faq {
+            display: flex;
+            flex-direction: column;
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            label {
+                display: block;
+                cursor: pointer;
+                transition: ease .5s;
+            }
+
+            input + label + .accordion__content {
+                display: none;
+            }
+
+            input:checked + label + .accordion__content {
+                display: flex;
+            }
+        }
+    }
+}
