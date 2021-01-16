@@ -11,7 +11,8 @@ $bg-soft-violet: hsl(273, 75%, 66%);
 $bg-soft-blue: hsl(240, 73%, 65%);
 
 body {
-    background-color: $bg-violet;
+    background-color: $bg-soft-violet;
+    font-family: $primary-font;
 }
 
 .attribution { 
@@ -32,15 +33,22 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    margin: 20px;
-    padding: 20px;
+    margin: 150px 20px;
+    padding: 40px 20px;
     border-radius: 20px;
-    overflow: hidden;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
 
     .image {
         width: 266px;
         height: 196px;
-        margin: auto;
+        margin: -150px auto 0 auto;
+
+        @media (min-width: 1024px) {
+            margin: 0;
+        }
 
         .image__left {
             width: 100%;
@@ -54,7 +62,7 @@ body {
         flex-direction: column;
 
         h1 {
-
+            margin: 20px auto;
         }
 
         .accordion__faq {
@@ -67,8 +75,35 @@ body {
 
             label {
                 display: block;
+                position: relative;
                 cursor: pointer;
                 transition: ease .5s;
+                border-bottom: 1px solid $hr-light-gray-blue;
+                padding: 15px 0;
+                font-size: 12px;
+
+                @media (min-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+
+            label::after {
+                position: absolute;
+                content: "";
+                background: url("images/icon-arrow-down.svg") no-repeat;
+                width: 10px;
+                height: 7px;
+                top: 18px;
+                right: 0;
+            }
+
+            .accordion__content {
+                font-size: 12px;
+                border-bottom: 1px solid $hr-light-gray-blue;
+
+                @media (min-width: 768px) {
+                    font-size: 16px;
+                }
             }
 
             input + label + .accordion__content {
@@ -77,6 +112,15 @@ body {
 
             input:checked + label + .accordion__content {
                 display: flex;
+            }
+
+            input:checked + label {
+                font-weight: 700;
+                border: none;
+            }
+
+            input:checked + label::after {
+                transform: rotate(180deg);
             }
         }
     }

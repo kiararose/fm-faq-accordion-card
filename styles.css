@@ -1,14 +1,20 @@
 body {
   background-color: #af67e9;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: #1d1e35;
 }
 
 .attribution a {
-  color: #3e52a3;
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
 }
 
 .container {
@@ -20,12 +26,30 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
+  margin: 150px 20px;
+  padding: 40px 20px;
+  border-radius: 20px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .container .image {
   width: 266px;
   height: 196px;
-  margin: 0;
+  margin: -150px auto 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .container .image {
+    margin: 0;
+  }
 }
 
 .container .image .image__left {
@@ -45,6 +69,10 @@ body {
           flex-direction: column;
 }
 
+.container .accordion h1 {
+  margin: 20px auto;
+}
+
 .container .accordion .accordion__faq {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,9 +89,40 @@ body {
 
 .container .accordion .accordion__faq label {
   display: block;
+  position: relative;
   cursor: pointer;
   -webkit-transition: ease .5s;
   transition: ease .5s;
+  border-bottom: 1px solid #e7e7e9;
+  padding: 15px 0;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .container .accordion .accordion__faq label {
+    font-size: 16px;
+  }
+}
+
+.container .accordion .accordion__faq label::after {
+  position: absolute;
+  content: "";
+  background: url("images/icon-arrow-down.svg") no-repeat;
+  width: 10px;
+  height: 7px;
+  top: 18px;
+  right: 0;
+}
+
+.container .accordion .accordion__faq .accordion__content {
+  font-size: 12px;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+@media (min-width: 768px) {
+  .container .accordion .accordion__faq .accordion__content {
+    font-size: 16px;
+  }
 }
 
 .container .accordion .accordion__faq input + label + .accordion__content {
@@ -74,5 +133,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.container .accordion .accordion__faq input:checked + label {
+  font-weight: 700;
+  border: none;
+}
+
+.container .accordion .accordion__faq input:checked + label::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 /*# sourceMappingURL=styles.css.map */
