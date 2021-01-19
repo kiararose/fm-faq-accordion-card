@@ -18,10 +18,12 @@ body {
 .attribution { 
     font-size: 11px; 
     text-align: center; 
-    color: $text-dark-blue;
+    font-family: $primary-font;
 
     a { 
         text-decoration: none;
+        font-weight: bold;
+        color: $text-dark-blue;
     }
 
     a:hover {

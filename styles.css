@@ -7,11 +7,13 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: #1d1e35;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .attribution a {
   text-decoration: none;
+  font-weight: bold;
+  color: #1d1e35;
 }
 
 .attribution a:hover {
